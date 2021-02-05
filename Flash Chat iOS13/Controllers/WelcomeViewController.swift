@@ -7,16 +7,50 @@
 //
 
 import UIKit
+import CLTypingLabel
 
 class WelcomeViewController: UIViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var Appnamelbl: CLTypingLabel!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
+        Appnamelbl.text = "⚡️FlashChat"
+      
+        
+       /* let appname =
+        
+        var i = 0
+        for letter in appname
+        {
+            
+            Timer.scheduledTimer(withTimeInterval: 0.2*Double(i), repeats: false) { (T) in
+                self.titleLabel.text?.append(letter)
+            }
+            
+            
+            i+=1
+            
+        }*/
+        
+        
        
     }
     
-
+    @IBAction func RegisterBtnClicked(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "RegisterSegue", sender: self)
+        
+    }
+    
+    
+    @IBAction func LoginBtnClicked(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "LoginSegue", sender: self)
+    }
+    
 }
